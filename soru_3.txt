@@ -5,7 +5,7 @@ extraction) yöntemlerinden SIFT ve ORB yöntemlerinin temel amacını, çalış
 mantığını (temel adımlarını) açıklayınız.
 
 1. SIFT (Scale-Invariant Feature Transform)
-Çekim ölçeği, döndürme ve aydınlatma değişse bile aynı fiziksel noktayı yakalamak; her nokta için ayrıntılı (128-boyutlu) bir descriptor üretmek.
+Çekim ölçeği, döndürme ve aydınlatma değişse bile aynı fiziksel noktayı yakalamak; her nokta için ayrıntılı (128 boyutlu) bir descriptor üretmek.
 
 1-) Scale-Space (Çok Ölçekli Görüntü) Oluşturulur
 -Gaussian filtreleri kullanılarak görüntü farklı çözünürlüklerde gösterilir.

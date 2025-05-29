@@ -1,12 +1,12 @@
 4. Soru
 
 Görsel sınıflandırma görevlerinde kullanılan geleneksel Makine Öğrenmesi 
-yaklaşımlarından K-En Yakın Komşular (KNN) ve Destek Vektör Makineleri (SVM) 
+yaklaşımlarından K En Yakın Komşular (KNN) ve Destek Vektör Makineleri (SVM) 
 algoritmalarının temel çalışma prensiplerini açıklayınız. Her bir algoritmanın görsel 
 sınıflandırmada nasıl kullanılabileceğini ve temel bir avantaj/dezavantajını belirtiniz. 
 
 
-KNN (K-Nearest Neighbors)
+KNN (K Nearest Neighbors)
 Sınıflandırma yapmak için kullanırız. Tahmin edilecek değerin bağımsız değişkenlerin oluşturduğu vektörün en yakın komşularının hangi sınıfa daha yakın olduğunu tahmin eder.
 KNN Algoritması iki temel değer üzerinden tahmin yapar
 
@@ -38,9 +38,9 @@ KNN Dezavantaj
 
 Destek Vektör Makineleri (SVM)
 Destek Vektör Makineleri (SVM); denetimli bir makine öğrenmesi algoritmasıdır ve temelde sınıflandırma (classification) ile regresyon (SVR) problemlerini çözmek için tasarlanmıştır. 
-Veriyi en iyi ayıran bir karar yüzeyi (hiper-düzlem) bulmak ve bu yüzeyi sınıflar arası “marjini” olabildiğince geniş tutmaktır.
+Veriyi en iyi ayıran bir karar yüzeyi (hiper düzlem) bulmak ve bu yüzeyi sınıflar arası “marjini” olabildiğince geniş tutmaktır.
 
-1-) Hiper-düzlem (Hyperplane):
+1-) Hiper düzlem (Hyperplane):
 İki (veya daha fazla) sınıfı ayıran tüm doğrusal ayrım yüzeyleri arasından, sınıflara en yakın örneklerden (destek vektörleri) kenar boşluğunu (marjin) maksimum yapan hiper düzlem seçilir.
 Daha geniş marjin daha iyi genelleme.
 
@@ -60,6 +60,6 @@ SVM'in Avantajları
 
 SVM'in Dezavantajları
 - Veri büyüdükçe eğitim süresi uzar: Özellikle karmaşık çekirdek (kernel) fonksiyonları devreye girdiğinde, hesaplama yükü ciddi ölçüde artar.
-- Kernel ve hiper-parametre seçimi zorludur: Modelin performansı gamma gibi ayarlara ve seçilen çekirdeğe doğrudan bağlıdır; en verimli kombinasyonu bulmak genellikle yoğun deneme yanılma ister.
+- Kernel ve hiper parametre seçimi zorludur: Modelin performansı gamma gibi ayarlara ve seçilen çekirdeğe doğrudan bağlıdır; en verimli kombinasyonu bulmak genellikle yoğun deneme yanılma ister.
 - Yorumlanabilirlik sınırlı olabilir: Karmaşık çekirdeklerle elde edilen karar sınırlarını insan gözüyle anlamak ya da açıklamak kolay değildir.
 - Aykırı değer duyarlılığı: Gürültülü veya uç noktadaki veriler, marjini daraltarak hiper düzlemin konumunu olumsuz etkileyebilir.

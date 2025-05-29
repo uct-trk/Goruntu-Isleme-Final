@@ -33,7 +33,7 @@ Sayısal görüntü işleme, analog bir görüntüyü sayısal biçime dönüşt
 Analog görüntülerin işlenebilmesi için sayısallaştırılması gerekiyor. Sayısallaştırmada resim üzerinde konumsal olarak örnekleme ve renk derinliği için kuantalama yapılır.Sayısallaştırma iki adımda yapılır.
 
 1-) Örnekleme
-Sayısal bir görüntü, sürekli bir görüntü fonksiyonu üzerinden eşit aralıklarla x ekseni boyunca N adet örnek ve y ekseni boyunca M adet örnek alınarak oluşturulabilir. Böylece, sürekli zamanlı görüntü fonksiyonundan ayrık zamanlı görüntü fonksiyonuna geçiş gerçekleşmiş olur. 2-B ayrık-zamanda yatayda N ve düşeyde M örnekten oluşan toplam N × M sonlu örnek değeri ile analog bir görüntü yaklaşık olarak ifade edilebilir. Bu işlemde, analog görüntü fonksiyonu düzgün örneklenmiş olur. Yani düzgün örnekleme, analog görüntüden hem yatay hem de düşey yönde eşit aralıklarla örnek alınarak oluşturulur. Oluşan dijital(sayısal) görüntü aslında N satır ve M sütundan oluşan bir matrisdir.
+Sayısal bir görüntü, sürekli bir görüntü fonksiyonu üzerinden eşit aralıklarla x ekseni boyunca N adet örnek ve y ekseni boyunca M adet örnek alınarak oluşturulabilir. Böylece, sürekli zamanlı görüntü fonksiyonundan ayrık zamanlı görüntü fonksiyonuna geçiş gerçekleşmiş olur. 2B ayrık zamanda yatayda N ve düşeyde M örnekten oluşan toplam N × M sonlu örnek değeri ile analog bir görüntü yaklaşık olarak ifade edilebilir. Bu işlemde, analog görüntü fonksiyonu düzgün örneklenmiş olur. Yani düzgün örnekleme, analog görüntüden hem yatay hem de düşey yönde eşit aralıklarla örnek alınarak oluşturulur. Oluşan dijital(sayısal) görüntü aslında N satır ve M sütundan oluşan bir matrisdir.
 
 2-) Kuantalama
 Görüntünün her bir pikselinin parlaklık değeri, kuantalama ile belirlenir.Görüntü elemanının en küçük ve en büyük genlik değerleri aralığı basamaklara ayrılarak, ilgili basamak
@@ -45,7 +45,7 @@ Sonuç olarak iki işlem sonrasında bilgisayarlar tarafından işlenebilen say�
 * Konvolüsyon *
 Sayısal  görüntüdeki belirli özellikleri ortaya çıkarmak veya vurgulamak amacıyla görüntü üzerinde matematiksel işlemler uygulanmasıdır. Sayısal bir görüntü üzerinde çekirdek(kernel) matris uygulayarak görüntüleri işleme tekniğidir.   Seçtiğimiz çekirdek sayısal görüntü üzerinde kaydırılarak her konuma uygulanır. Her konumda çekirdek ile ilgili bölgedeki görüntü piksel değerleri çarpılır. Elde ettiğimiz değerler toplanır ve yeni görüntüdeki ilgili pikselin değeri olur.
 
-1-) Resmi Yumuşatma(Bulanıklaştırma-blurring) Filtreleri
+1-) Resmi Yumuşatma(Bulanıklaştırma) Filtreleri
 
 Filtreler görüntüyü yumuşatmak veya kenarları belirginleştirmek için dijital filtreler kullanılır.
 
