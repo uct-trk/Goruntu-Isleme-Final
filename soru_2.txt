@@ -1,0 +1,86 @@
+2. Soru
+
+Sayısal Görüntü kavramını piksel ve matris ilişkisi üzerinden açıklayınız. Analog bir
+görüntünün sayısal hale dönüştürülme adımlarını detaylandırınız. Konvolüsyon
+nedir açıklayınız.
+
+Sayısal görüntü kavramının açıklaması için kullanılan kavramlar aşağıda açıklanmıştır.
+
+* Matris * 
+Matris, matematikte satır ve sutundan oluşan bir yapıdır.
+Aşağıda 5 satırlık 5 sütunluk bir matris örneği bulunmaktadır.(5x5)
+her hücrede piksel mevcuttur.
+
+[120, 130, 125, 140, 135]
+[110, 115, 118, 125, 120]
+[100, 105, 110, 115, 110]
+[ 90,  95, 100, 105, 100]
+[ 80,  85,  90,  95,  90]
+
+Yukarıdaki matriste hücrelerin içindeki sayılar. Her pikselin 0-255 arası parlaklık değerini temsil ediyor.
+
+* Piksel *
+Dijital görüntünün elde edilmesini sağlayan ve kontrol edilebilen en küçük birimdir.
+Dijital bir görüntünün 2 boyutlu dizi şeklindeki her bir elemanına piksel denir.
+Piksel sayısal görüntüyü oluşturan en küçük elemandır.
+
+* Sayısal Görüntü *
+Sayısal görüntü piksellerden meydana gelir. Pikseller matris içerisinde yer alır. Bu sayısal yapı sayesinde görüntüler analiz edilebilir, dönüştürülebilir ve işlenebilir.
+Sayısal görüntü işleme, analog bir görüntüyü sayısal biçime dönüştürülmesi ile ilgilenir.
+
+* Analog Görüntünün Sayısal Görüntüye Dönüştürülme Adımları * 
+
+Analog görüntülerin işlenebilmesi için sayısallaştırılması gerekiyor. Sayısallaştırmada resim üzerinde konumsal olarak örnekleme ve renk derinliği için kuantalama yapılır.Sayısallaştırma iki adımda yapılır.
+
+1-) Örnekleme
+Sayısal bir görüntü, sürekli bir görüntü fonksiyonu üzerinden eşit aralıklarla x ekseni boyunca N adet örnek ve y ekseni boyunca M adet örnek alınarak oluşturulabilir. Böylece, sürekli zamanlı görüntü fonksiyonundan ayrık zamanlı görüntü fonksiyonuna geçiş gerçekleşmiş olur. 2-B ayrık-zamanda yatayda N ve düşeyde M örnekten oluşan toplam N × M sonlu örnek değeri ile analog bir görüntü yaklaşık olarak ifade edilebilir. Bu işlemde, analog görüntü fonksiyonu düzgün örneklenmiş olur. Yani düzgün örnekleme, analog görüntüden hem yatay hem de düşey yönde eşit aralıklarla örnek alınarak oluşturulur. Oluşan dijital(sayısal) görüntü aslında N satır ve M sütundan oluşan bir matrisdir.
+
+2-) Kuantalama
+Görüntünün her bir pikselinin parlaklık değeri, kuantalama ile belirlenir.Görüntü elemanının en küçük ve en büyük genlik değerleri aralığı basamaklara ayrılarak, ilgili basamak
+değerine en yakın olan görüntü değerini almasıdır. Yani analog renk değerinin, geçerli en yakın dijital renk değerine dönüştürülmesidir.
+
+Sonuç olarak iki işlem sonrasında bilgisayarlar tarafından işlenebilen sayısal bir görüntü elde edilmiş olur. İşlemler sonucunda elde edilen görüntü 2 boyutlu matris yapısındadır. Matrisin her bir elemanı piksel olarak adlandırılıyor.
+
+
+* Konvolüsyon *
+Sayısal  görüntüdeki belirli özellikleri ortaya çıkarmak veya vurgulamak amacıyla görüntü üzerinde matematiksel işlemler uygulanmasıdır. Sayısal bir görüntü üzerinde çekirdek(kernel) matris uygulayarak görüntüleri işleme tekniğidir.   Seçtiğimiz çekirdek sayısal görüntü üzerinde kaydırılarak her konuma uygulanır. Her konumda çekirdek ile ilgili bölgedeki görüntü piksel değerleri çarpılır. Elde ettiğimiz değerler toplanır ve yeni görüntüdeki ilgili pikselin değeri olur.
+
+1-) Resmi Yumuşatma(Bulanıklaştırma-blurring) Filtreleri
+
+Filtreler görüntüyü yumuşatmak veya kenarları belirginleştirmek için dijital filtreler kullanılır.
+
+1-a) Ortalama Filtresi(Mean)
+Ortalama filtresi, görüntüleri yumuşatmanın yöntemlerinden bir tanesidir. Bir piksel ile diğer pikseller arasındaki değişim miktarinı azaltmaktır. Bir sayısal görüntünün her bir piksel değerini komşularının ve kendisinin dahil olduğu ortalama değer ile değiştirmektir. Ortalama filtresi bir konvolüsyon filtresidir. Görüntüdeki gürültüyü azaltmak için kullanılır. Gürültü daha az belirgin hale gelir ve görüntüde yumuşatılmaktadır. Aşağıda 3x3 ortalama filtresi örneği açıklaması bulunmaktadır.
+
+[1 1 1]    Kernel(çekirdek)  K = 1/9 [matris] 
+[1 1 1]	   9 pikselin ortalaması alınır.
+[1 1 1]	   Merkez piksel bulunan değer bulduğumuz yeni değer olur.	(2. satır 2. sütundaki değer)
+
+Dezavantaj olarak, yakın bölgedeki tüm piksellerin ortalama değerini önemli ölçüde etkiler. Buda resmin değişmesine sebep olur. Görselde bulanıklaşma meydana gelir sebebi ise kenarın her iki tarafındaki pikseller için yeni değerler üretilecektir.
+
+1-b) Medyan Filtresi(Orta Değer)
+Görüntüdeki gürültüyü azaltmak hedeflenir. Medyan filtresi her pikselin değerini hesaplamak için yakınındaki komşularına bakar. Komşu pikselleri sıralayıp sıranın ortasındaki değeri alır.
+
+[124 126 127]    Küçükten büyüğe sıralıyoruz ve ortanca(medyan) değerini merkez noktada kullanıyoruz.
+[120 150 125]	 115, 119, 120, 123, 124, 125, 126, 127, 150 bizim ortanca değerimiz 124  
+[115 119 123]	
+
+Temsil yeteneği uzak bir piksel sıralanan dizinin uçlarında kalacağından yani hiçbir zaman ortada bulunmayacaktır. Oradaki komşularını etkilemeyecektir.
+Medyan değer, komşu piksellerin birinin değeri olması gerektiği için, kenar boyunca hareket ettiğinde gerçekçi olmayan piksel değerleri oluşturmaz. Bu nedenle, medyan filtre, keskin kenarları iyi korur. Böylece kenar üzerindeki keskinlik kaybolmamış olacaktır. 
+
+1-c) Gauss Bulanıklaştırma/Yumuşatma Filtresi
+Gauss yumuşatma operatörü, görüntüleri 'bulanıklaştırmak', ayrıntı ve gürültüyü ortadan kaldırmak için kullanılan 2 boyutlu konvolüsyon (çekirdek matris ile resim üzerindeki piksellerin çarpımı işlemi) işlemidir.
+
+2-) Görüntü Netleştirme Algoritmaları
+
+2-a) Kenar Görüntüsünü Kullanarak Resim Netleştirme
+Bu algoritma orjinal görüntüden, görüntünün yumuşatılmış halini çıkararak belirgin kenarların görüntüsünü ortaya çıkarır. Daha sonra orjinal görüntü ile belirginleşmiş kenarların görüntüsünü birleştirerek, kenarları keskinleşmiş görüntüyü (netleşmiş görüntü) elde eder.
+
+2-b) Konvolüsyon Yöntemi (Çekirdek Matris) ile Netleştirme
+Dijital görüntü işleme alanında bir görüntünün kenarlarını vurgulamak ve detaylarını belirginleştirmek için kullanılır. Bu işlemde çekirdek (kernel) matrisi adı verilen küçük bir filtre matrisi, görüntü üzerinde kayan pencere şeklinde uygulanarak yeni bir görüntü oluşturulur.
+
+3-) Kenar Bulma Algoritmaları
+
+4-) Netleştirme İşlemleri
+
+5-) Görsel Efekt İşlemleri

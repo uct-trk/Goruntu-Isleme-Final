@@ -1,0 +1,25 @@
+5. Soru
+
+Derin öğrenmenin (özellikle CNN'lerin) görsel sınıflandırmada geleneksel 
+yöntemlere göre avantajlarını ve kendi içindeki zorluklarını tartışınız. 
+
+* Derin Öğrenmenin Avantajları *
+- Uçtan uca öğrenme elle işlem gerekmez.
+- Anlamlı verileri modelin kendisi Öğrenmesi.
+- Geleneksel yöntemlere göre daha gelişmiştir daha yüksek doğruluk ile çalışır.
+- Büyük veri setinde eğitilmiş bir model, küçük ya da benzer başka bir problemde yeniden kullanılabilir.
+- Veri büyüdükçe performans artar büyük veri ile çalışmak daha iyi sonuclar verir.
+- Veri boyutları küçültülerek hesaplama maliyeti azaltılır. Büyük veri setlerinde avantaj sağlar.
+- İlk katmanlarda basit kenarlar, orta katmanlarda parçalar, derin katmanlarda tam nesne kavramlarını yakalar.
+
+---------------------------------
+
+* Derin Öğrenmenin Dezavantajları *
+- Yüksek performans için büyük miktaarda veriye ihtiyaç duyar. Veri setleri doğru etiketlenmiş olmalıdır.
+- Hesaplama maliyeti yüksektir. Donanım ve bellek gerektirir.Enerji tüketimi fazla olduğu için çevreye zararlı olabilir.
+- Çok fazla veriye ihtiyaç duyuduğu için eğitim süresi uzun sürer.
+- Aşırı öğrenme riski vardır. Eğitim verilerine uyum sağladığından dolayı yeni veri setlerinde genelleme bozulabilir.
+- İnsanlar tarafından yorumlanabilirliği zorlaşabilir.
+
+
+

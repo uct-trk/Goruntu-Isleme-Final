@@ -1,0 +1,33 @@
+1. Soru
+
+Dijital veya analog görseller üzerinden anlamlı bilgiler elde etmek amaçlanmaktadır. Bu görselleri çeşitli tekniklerle analiz ederek dönüştürmektir. Kullanılan teknikler sonucunda görüntüntü üzerinden bilgi çıkarma ve onları anlamlandırmayı hedefler. Uyguladığımız tekniklere örnek olarak;
+
+- Görüntü İyileştirme
+- Görüntü Resterasyonu
+- Segmentasyon
+- Kenar Tespiti
+- Morfolojik İşlemler
+
+Yukarıda belirttiğim örneklerin dışında başka tekniklerde kullanılmaktadır.
+
+Görüntü işleme uygulama alanları
+
+1-) Sağlık alanında kullanılır.
+Dijital görüntü işleme, tıp alanında hastalıkların tedavisinde ve teşhisinde kullanılır.
+
+2-) Savunma Sanayisi
+Askeri alanda veya iç işlerine bağlı kolluk kuvetlerinde kullanılmak üzere insansız hava araçları, hedef takip ve hedef tanıma sistemleri kullanılır.
+
+3-) Güvenlik ve Gözetim Sistemleri
+Güvenlik kameralarında ve biyometrik sistemlerde kullanılarak güvenliği artırmak hedeflenir.Örnek olarak Hava alanları, stadyumlarda yüz tanıma sistemleri kullanılması.
+
+4-) Uzaktan Algılama ve Coğrafi Bilgi Sistemleri
+Uydudan çekilmiş görüntülerin analiz edilmesiyle coğrafi bilgi sitemlerine entegre edilmesi.Örnek olarak uydu görüntüleri ile orman alanlarının değişimi izlenir bu sayede şehirleşme süreçleri analiz edilir.
+
+5-) Endüstriyel Otomasyon
+Üretim hatlarında üretilen üretilen ürünlerin kalite kontrolü ve hatasız ürün çıkartmak hedeflenir. Örneğin otomotiv sektöründe üretilen parçaların doğru montajlanması veya hasarlı ürün tespiti.
+
+6-) Tarım ve Gıda Endüstrisi
+Tarım ürünlerinin üretimindeki verimliliği artırmak amacıyla görüntü işleme kullanılır.
+Görüntü işleme teknikleri kullanılarak bitkilerin hastalık tespiti yapılması.
+Meyve ve sebzelerin renklerine göre olgunluk tespiti yapılıp hasat yapılır.

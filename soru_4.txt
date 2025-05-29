@@ -1,0 +1,65 @@
+4. Soru
+
+Görsel sınıflandırma görevlerinde kullanılan geleneksel Makine Öğrenmesi 
+yaklaşımlarından K-En Yakın Komşular (KNN) ve Destek Vektör Makineleri (SVM) 
+algoritmalarının temel çalışma prensiplerini açıklayınız. Her bir algoritmanın görsel 
+sınıflandırmada nasıl kullanılabileceğini ve temel bir avantaj/dezavantajını belirtiniz. 
+
+
+KNN (K-Nearest Neighbors)
+Sınıflandırma yapmak için kullanırız. Tahmin edilecek değerin bağımsız değişkenlerin oluşturduğu vektörün en yakın komşularının hangi sınıfa daha yakın olduğunu tahmin eder.
+KNN Algoritması iki temel değer üzerinden tahmin yapar
+
+Uzaklık
+Tahmin edilecek noktanın diğer noktalara uzaklığı hesaplanır.
+
+K(Komşuluk Sayısı)
+En yakın kaç komşu üzerinden hesaplama yapılacağını belirtiriz. K değerini kendimiz yazarız ve en uygun sonucu bulmak için en uygun K değerini kullanırız.
+
+* KNN Çalışma adımları *
+- Eğitim verisi ve test verisi hazırlanır.
+- K parametresi belirlenir. Bu parametre verilen bir noktaya en yakın komşuların sayısıdır.
+- Mesafe Öklid uzaklık formülü ile bulunabilir.
+- nokta ile diğer tüm noktalar arasındaki uzaklıklar tek tek hesaplanır.
+- Hesaplanan uzaklıklara göre satırlar sıralanır ve bunlar arasından en küçük olan k tanesi seçilir.
+- Seçilen satırların hangi kategoriye ait oldukları belirlenir ve en çok tekrar eden kategori değeri seçilir.
+- Seçilen kategori, tahmin edilmesi beklenen gözlem değerinin kategorisi olarak kabul edilir.
+
+KNN Avantaj
+- Eğitimsiz ve sezgisel (Ezber gibi çalışır)
+– Model parametresi yok; veri değiştiğinde yeniden eğitmek gerekmez.
+
+KNN Dezavantaj
+- Bütün veriye baktığı için Yavaş tahmin süresİ.
+– Özellikler farklı ölçeklerdeyse yanıltıcı olur.
+- KNN, her yeni görüntü için tüm eğitim örnekleriyle mesafe hesaplar; veri seti büyüdükçe bu işlem yavaşlar ve bellekte tüm vektörleri saklamak gerekir.
+
+------------------------------------
+
+Destek Vektör Makineleri (SVM)
+Destek Vektör Makineleri (SVM); denetimli bir makine öğrenmesi algoritmasıdır ve temelde sınıflandırma (classification) ile regresyon (SVR) problemlerini çözmek için tasarlanmıştır. 
+Veriyi en iyi ayıran bir karar yüzeyi (hiper-düzlem) bulmak ve bu yüzeyi sınıflar arası “marjini” olabildiğince geniş tutmaktır.
+
+1-) Hiper-düzlem (Hyperplane):
+İki (veya daha fazla) sınıfı ayıran tüm doğrusal ayrım yüzeyleri arasından, sınıflara en yakın örneklerden (destek vektörleri) kenar boşluğunu (marjin) maksimum yapan hiper düzlem seçilir.
+Daha geniş marjin daha iyi genelleme.
+
+2-) Destek Vektörleri (Support Vectors)
+- Ayırıcı düzleme en yakın duran (marjin üzerinde veya hemen ötesinde) gözlemlerdir.
+- Model parametrelerini yalnızca bu örnekler belirler; diğer eğitim noktaları karar yüzeyini etkilemez.
+
+3-) Marjin (Margin)
+- Marjin, karar düzlemi ile her iki sınıftan bu düzleme en yakın destek vektörleri arasındaki uzaklık olarak tanımlanır.
+- SVM’in stratejisi bu aralığı olabildiğince geniş tutmaktır; geniş bir marjin, modeli gürültüye karşı dayanıklı kılar ve görülmemiş örnekleri daha güvenilir biçimde sınıflandırmasını sağlar.
+
+SVM'in Avantajları
+- Özellik sayısının örnek sayısını aştığı durumlarda bile kararlı performans gösterir.
+- Karar sınırını mümkün olduğunca açarak, modelin hiç görmediği verilerde bile güvenilir sonuç vermesini sağlar.
+- Eğitimin ardından yalnızca destek vektörlerini tutar; tüm eğitim kümesini saklamaya gerek kalmaz.
+- Doğrusal ilişkilere ek olarak RBF, polinom vb. çekirdeklerle karmaşık, doğrusal olmayan kalıpları da yakalayabilir.
+
+SVM'in Dezavantajları
+- Veri büyüdükçe eğitim süresi uzar: Özellikle karmaşık çekirdek (kernel) fonksiyonları devreye girdiğinde, hesaplama yükü ciddi ölçüde artar.
+- Kernel ve hiper-parametre seçimi zorludur: Modelin performansı gamma gibi ayarlara ve seçilen çekirdeğe doğrudan bağlıdır; en verimli kombinasyonu bulmak genellikle yoğun deneme yanılma ister.
+- Yorumlanabilirlik sınırlı olabilir: Karmaşık çekirdeklerle elde edilen karar sınırlarını insan gözüyle anlamak ya da açıklamak kolay değildir.
+- Aykırı değer duyarlılığı: Gürültülü veya uç noktadaki veriler, marjini daraltarak hiper düzlemin konumunu olumsuz etkileyebilir.

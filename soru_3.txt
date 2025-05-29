@@ -1,0 +1,46 @@
+3. Soru 
+
+Görüntülerden anlamlı bilgi çıkarmak için kullanılan özellik çıkarımı (feature
+extraction) yöntemlerinden SIFT ve ORB yöntemlerinin temel amacını, çalışma
+mantığını (temel adımlarını) açıklayınız.
+
+1. SIFT (Scale-Invariant Feature Transform)
+Çekim ölçeği, döndürme ve aydınlatma değişse bile aynı fiziksel noktayı yakalamak; her nokta için ayrıntılı (128-boyutlu) bir descriptor üretmek.
+
+1-) Scale-Space (Çok Ölçekli Görüntü) Oluşturulur
+-Gaussian filtreleri kullanılarak görüntü farklı çözünürlüklerde gösterilir.
+
+2-) DoG (Difference of Gaussians) ile Aday Noktaları Bulunur
+-Farklı sigma değerleriyle oluşturulan görüntüler arasındaki farklar alınır.
+
+3-) Keskinleştirme ve Filtreleme
+- Gürültü elenir, sadece tek yönde belirgin (kenar üzerindeki) ama diğer yönde zayıf olan ve bu yüzden konumu hassas olmayan pikseller atılır. 
+-Noktanın tekrarlanabilirliği test edilir.
+
+4-) Yön Bilgisi Atama (Orientation Assignment)
+- Her özellik noktasına, görüntüdeki kenarların yönü (gradient) baz alınarak bir açı atanır.
+- Döndürmeden bağımsız olması, döndürülse bile aynı noktayı tanıyabilir.
+
+5-) Descriptor Oluşturulur 
+-Nokta çevresindeki 16 × 16 pencere => 4 × 4 alt hücre olarak bölünür. 
+-Her hücrede 8 yönlü histogram => 4 × 4 × 8 = 128 boyutlu vektör oluşturulur.
+
+-------------------------------------
+
+2. ORB (Oriented FAST and Rotated BRIEF)
+SIFT’e göre çok daha hızlı, patentsiz(ücretsiz) ve gömülü/gerçek zaman uygulamalara uygun bir alternatif sunması.
+Ölçek değişimlerine ve dönmelere dayanaklı olmadığı için tek başına kullanılamaz.
+
+1-) FAST algoritmasıyla anahtar noktalar tespit edilir.
+-FAST köşe dedektörü, farklı ölçek katmanlarında uygulanır ve hızlıca köşeler bulunur.
+Merkez piksel seçilir. Seçilen pikselin etrafına bir daire çizilir. Dairenin içinde kalan piksellerle merkez pikselin parlaklığı karşılaştırılır.Ani parlaklık değişimlerine bakarak köşe buluyoruz.
+
+2-) BRIEF algoritması ile tanımlayıcı oluşturulur.
+-BRIEF’in piksel çifti karşılaştırması, referans yöne göre döndürülerek alınır.
+Bir adet anahtar nokta seçeriz ve çevresini inceleriz. Pencere içerisindeki rastgele piksel çiftleri seçilir. Seçilen piksel çiftleri arasında parlaklık kıyaslaması yapılır.
+Soldaki daha parlaksa 1 değilse 0 olur. Bu karşılaştırmalar 1 ve 0 dizisi oluşturur. Bu sayede küçük boyutlu veri oluşturulur ve çok hızlı olur.
+Brıef amacı bir noktanın descriptorünü çıkartmaktır.
+
+3-) Oriented kısmı
+- Bulunduğu noktanın hangi yöne bakan bir köşe olduğu bilinmez. Resim döndürüldüğünde farklı komşu piksellere sahip olur bu sebeple FAST rotasyonuna duyarlı değildir.
+- Brief'i bu yöne göre döndürülerek kullanılır. Köşe döndürülse bile aynıdır.
